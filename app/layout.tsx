@@ -61,7 +61,7 @@ export default function RootLayout({
             </footer>
           </div> */}
           <div className="h-screen grid place-items-center">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4  animate-pulse">
               <Image src={'logo-brand.svg'} width={80} height={80} alt="logo brand"/>
               <h3 className="uppercase text-7xl text-gray-300">under constructions</h3>
             </div>
