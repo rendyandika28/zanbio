@@ -1,0 +1,58 @@
+// variable
+$brand-color: #0052CC;
+$text-black-color: #1C2433;
+$text-gray-color: #666D80;
+
+.button {
+    &_primary {
+        @apply text-white text_button;
+        background: $brand-color;
+    }
+}
+
+.text {
+    &_super {
+        @apply font-medium text-5xl lg:text-[68px] leading-[85px];
+        color: $text-black-color;
+    }
+
+    &_subtitle {
+        @apply text-[18px] font-normal leading-[27.9px];
+        color: $text-gray-color;
+    }
+
+    &_gradient {
+        &_primary {
+            background: linear-gradient(269.97deg, #33CFFF 64.42%, #40C4AA 69.87%, #208BBB 82.21%, #0052CC 91.57%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &_button {
+        @apply font-semibold text-base leading-[24.8px];
+    }
+}
+
+
+.flex-center-col-content {
+    @apply flex flex-col justify-center items-center;
+}
+
+.introduction {
+    @apply relative;
+
+    &__background {
+        @apply absolute inset-0 bg-bottom bg-cover bg-[url('@/assets/illustrations/bg-introduction-gradient.png')];
+    }
+
+    &__content {
+        @apply flex-center-col-content;
+        @apply relative text-center;
+        @apply max-w-7xl mx-auto z-[1] py-20 px-6 lg:px-0;
+    }
+
+    &__cta {
+        @apply button_primary h-[52px] w-[316px] mt-10 mb-[60px];
+    }
+}

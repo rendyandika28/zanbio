@@ -1,0 +1,32 @@
+import styles from '@/styles/style.module.scss'
+import { Button } from '@nextui-org/button'
+import Image from 'next/image'
+
+export default function Introduction() {
+  return (
+    <div className={styles.introduction}>
+      <div className={styles.introduction__background}></div>
+      <div className={styles.introduction__content}>
+        <h1 className={styles.text_super}><span className={styles.text_gradient_primary}>Simplify</span> Your Invoicing <br /> with Zanbio</h1>
+        <h4 className={`lg:max-w-[620px] mt-4 ${styles.text_subtitle}`}>Zanbio streamlines your financial management by generating Accounts Receivable, Accounts Payable, and invoices effortlessly. Manage your business finances efficiently—all in one place.</h4>
+
+        <Button
+          className={styles.introduction__cta}
+          variant="flat"
+        >
+          Talk to Sales
+        </Button>
+
+        <Image 
+          src="introduction-illustration.svg"
+          width={100}
+          height={100}
+          className='size-full'
+          alt='introduction-illustration'
+          priority
+        />
+      </div>
+      
+    </div>
+  )
+}
