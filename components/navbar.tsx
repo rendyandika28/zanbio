@@ -29,8 +29,8 @@ export const Navbar = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex" justify="center">
-        <NavbarItem className="hidden md:flex">
+      <NavbarContent className="hidden lg:flex" justify="center">
+        <NavbarItem className="hidden lg:flex">
           <Tabs
             key={"tabs-menu"}
             aria-label="Tabs sizes"
@@ -44,8 +44,8 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex" justify="end">
-        <NavbarItem className="hidden md:flex">
+      <NavbarContent className="hidden lg:flex" justify="end">
+        <NavbarItem className="hidden lg:flex">
           <Button
             isExternal
             as={Link}
@@ -58,7 +58,7 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden pl-4" justify="end">
+      <NavbarContent className="lg:hidden pl-4" justify="end">
         <NavbarMenuToggle />
       </NavbarContent>
 

@@ -4,6 +4,7 @@ $text-black-color: #1c2433;
 $text-gray-color: #666d80;
 $text-secondary-color: #f8fafb;
 $text-primary-50: #e6eefa;
+$text-third-color: #C1C7D0;
 
 .button {
   &_primary {
@@ -183,7 +184,7 @@ $text-primary-50: #e6eefa;
 .tagline {
   @apply relative;
   &__background {
-    @apply absolute inset-0 bg-bottom bg-cover bg-[url('@/assets/illustrations/bg-tagline.png')];
+    @apply absolute inset-0 bg-bottom bg-cover bg-[url('@/assets/illustrations/bg-tagline.png')] bg-black;
   }
   &__content {
     @apply max-w-7xl mx-auto z-[1] relative text-center;
@@ -203,4 +204,32 @@ $text-primary-50: #e6eefa;
       color: $text-black-color;
     }
   }
+}
+
+.footer {
+  @apply bg-[#0D0D12] ;
+  color: $text-third-color;
+  
+  &__content {
+    @apply max-w-7xl mx-auto border-none;
+    @apply py-20 px-6 flex flex-col md:flex-row items-center justify-between gap-8;
+
+    &_left {
+      @apply w-full md:max-w-[370px];
+      & .footer__tagline {
+        @apply text-base leading-6;
+        color: $text-third-color;
+      }
+    }
+
+    &_right {
+      @apply w-full md:max-w-fit
+    }
+  }
+
+  &__cta {
+    @apply bg-white h-[40px] px-6 text-base font-medium;
+    color: $text-black-color;
+  }
+  
 }
