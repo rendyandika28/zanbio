@@ -36,4 +36,5 @@ export default function Footer({ isHomeFooter }: { isHomeFooter: boolean }) {
       </footer>
     );
   }
+  return <footer>Empty footer</footer>
 }

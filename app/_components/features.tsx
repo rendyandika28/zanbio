@@ -4,11 +4,17 @@ import Image from "next/image";
 import styles from "@/styles/style.module.scss";
 import ImgFeaturesPayment from "@/assets/illustrations/features-payment.svg";
 import ImgFeaturesInvoice from "@/assets/illustrations/features-invoice.svg";
+import BgFeatures from "@/assets/illustrations/bg-features.png";
 
 export default function Features() {
   return (
     <div className={styles.features}>
-      <div className={styles.features__background} />
+      <div
+        className={styles.features__background}
+        style={{
+          backgroundImage: `url(${BgFeatures.src})`,
+        }}
+      />
       <div className={styles.features__container}>
         <div className={styles.features__head}>
           <h2 className={styles.text_heading_1}>Features</h2>

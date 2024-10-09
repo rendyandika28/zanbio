@@ -1,12 +1,17 @@
 import { Button } from "@nextui-org/button";
 import Image from "next/image";
 
+import BgIntroductionGradient from "@/assets/illustrations/bg-introduction-gradient.png";
 import styles from "@/styles/style.module.scss";
 
 export default function Introduction() {
   return (
     <div className={styles.introduction}>
-      <div className={styles.introduction__background} />
+      <div
+        className={styles.introduction__background}
+        style={{
+          backgroundImage: `url(${BgIntroductionGradient.src})`,
+      }}/>
       <div className={styles.introduction__content}>
         <h1 className={styles.text_super}>
           <span className={styles.text_gradient_primary}>Simplify</span> Your
