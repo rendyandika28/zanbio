@@ -24,7 +24,7 @@ export const Navbar = () => {
       <NavbarContent justify="start">
         <NavbarBrand as="li">
           <NextLink href="/">
-            <Logo className="size-36 lg:size-52" />
+            <Logo />
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
