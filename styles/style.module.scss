@@ -2,6 +2,8 @@
 $brand-color: #0052CC;
 $text-black-color: #1C2433;
 $text-gray-color: #666D80;
+$text-secondary-color: #F8FAFB;
+$text-primary-50: #E6EEFA;
 
 .button {
     &_primary {
@@ -12,13 +14,18 @@ $text-gray-color: #666D80;
 
 .text {
     &_super {
-        @apply font-medium text-5xl lg:text-[68px] leading-[85px];
+        @apply font-medium text-5xl lg:text-[68px] xl:leading-[85px];
         color: $text-black-color;
     }
 
     &_subtitle {
-        @apply text-[18px] font-normal leading-[27.9px];
+        @apply text-[18px] font-normal xl:leading-[27.9px];
         color: $text-gray-color;
+    }
+
+    &_heading_1 {
+        @apply font-semibold xl:leading-[29px] text-2xl;
+        color: $text-secondary-color;
     }
 
     &_gradient {
@@ -30,7 +37,7 @@ $text-gray-color: #666D80;
     }
 
     &_button {
-        @apply font-semibold text-base leading-[24.8px];
+        @apply font-semibold text-base xl:leading-[24.8px];
     }
 }
 
@@ -53,6 +60,73 @@ $text-gray-color: #666D80;
     }
 
     &__cta {
-        @apply button_primary h-[52px] w-[316px] mt-10 mb-[60px];
+        @apply button_primary h-[52px] w-[140px] mt-10 mb-[60px];
+    }
+}
+
+.features {
+    @apply relative;
+    // @apply px-6 py-6 md:px-10 md:py-10 xl:px-[120px] lg:py-[80px] bg-black text-white bg-bottom bg-cover bg-[url('@/assets/illustrations/bg-features.svg')];
+    &__background {
+        @apply absolute inset-0 bg-bottom bg-cover bg-[url('@/assets/illustrations/bg-features.svg')];
+    }
+    &__container {
+        @apply max-w-7xl mx-auto z-[1] relative;
+        @apply py-20 px-6;
+    }
+
+    &__title {
+        @apply text-[52px] text-white my-4;
+    }
+
+    &__subtitle {
+        @apply lg:max-w-[820px] mx-auto;
+        color: $text-secondary-color;
+    }
+
+    &__head {
+        @apply text-center mb-[40px]
+    }
+
+    &__content {
+        @apply lg:py-[80px] flex flex-col lg:flex-row items-center gap-5 lg:gap-10 xl:gap-24;
+
+        &_swap {
+            @apply lg:pt-[60px];
+
+            .features__content_container {
+                @apply order-2
+            }
+
+            .features__content_img {
+                @apply order-1;
+            }
+        }
+        
+        &_container {
+            @apply w-full md:w-3/4 lg:w-[45%] order-2 lg:order-1 mb-12 lg:mb-0;
+            color: $text-secondary-color;
+        }
+
+        &_img {
+            @apply w-full md:w-3/4 lg:w-[55%] order-1 lg:order-2;
+        }
+
+        &_head {
+            color: $text-primary-50;
+        }
+
+        &_title {
+            @apply text-[48px] my-4;
+        }
+        
+        &_title, &_subtitle {
+            color: $text-secondary-color;
+        }
+
+        &_cta {
+            @apply mt-4 px-12 h-[52px];
+            @apply text-white
+        }
     }
 }
