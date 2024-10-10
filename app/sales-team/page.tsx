@@ -25,6 +25,8 @@ export default function SalesTeam() {
     const response = await _response.json();
 
     if (response?.statusCode == 200) {
+      setIsSuccessSubmitForm(true)
+
       return toast({
         title: "Success send message",
         description: "We'll catch you after receive your message",
