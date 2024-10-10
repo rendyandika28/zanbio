@@ -1,5 +1,6 @@
 import { Button } from "@nextui-org/button";
 import Image from "next/image";
+import Link from "next/link";
 
 import BgIntroductionGradient from "@/assets/illustrations/bg-introduction-gradient.png";
 import styles from "@/styles/style.module.scss";
@@ -23,7 +24,13 @@ export default function Introduction() {
           business finances efficiently—all in one place.
         </h4>
 
-        <Button className={styles.introduction__cta}>Talk to Sales</Button>
+        <Button
+          as={Link}
+          className={styles.introduction__cta}
+          href="/sales-team"
+        >
+          Talk to Sales
+        </Button>
 
         <Image 
           priority

@@ -36,16 +36,17 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body
+        suppressHydrationWarning
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <div className="relative min-h-dvh">
+          <div className="relative min-h-dvh flex flex-col">
             <Navbar />
-            <main>{children}</main>
-            <Footer isHomeFooter />
+            <main className="flex-1">{children}</main>
+            <Footer />
           </div>
         </Providers>
       </body>

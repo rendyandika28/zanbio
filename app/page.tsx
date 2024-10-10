@@ -5,11 +5,11 @@ import Tagline from "./_components/tagline";
 
 export default function Home() {
   return (
-    <section>
+    <main>
       <Introduction />
       <Features />
       <Benefits />
       <Tagline />
-    </section>
+    </main>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@nextui-org/button";
 import {
   NavbarBrand,
   NavbarContent,
@@ -9,22 +10,39 @@ import {
   NavbarMenuToggle,
   Navbar as NextUINavbar,
 } from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Link } from "@nextui-org/link";
 import { Tab, Tabs } from "@nextui-org/tabs";
 import NextLink from "next/link";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
-import styles from "@/styles/style.module.scss";
 import { Logo } from "@/components/icons";
 import { siteConfig } from "@/config/site";
+import styles from "@/styles/style.module.scss";
+
 
 export const Navbar = () => {
+  const pathname = usePathname();
+
+  if (pathname !== "/") {
+    return (
+      <NextUINavbar className="border-b py-2" maxWidth="xl" position="sticky">
+        <NavbarContent justify="start">
+          <NavbarBrand>
+            <NextLink href="/">
+              <Logo customClass="w-36 lg:w-full"/>
+            </NextLink>
+          </NavbarBrand>
+        </NavbarContent>
+      </NextUINavbar>
+    );
+  }
+
   return (
     <NextUINavbar className="border-b py-2" maxWidth="xl" position="sticky">
       <NavbarContent justify="start">
-        <NavbarBrand as="li">
+        <NavbarBrand>
           <NextLink href="/">
-            <Logo />
+            <Logo customClass="w-36 lg:w-full"/>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -47,9 +65,9 @@ export const Navbar = () => {
       <NavbarContent className="hidden lg:flex" justify="end">
         <NavbarItem className="hidden lg:flex">
           <Button
-            isExternal
             as={Link}
             className={`${styles.button_primary} h-[46px]`}
+            href="/sales-team"
             style={{ fontSize: "14px" }}
             variant="flat"
           >
@@ -63,14 +81,25 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu>
-        <div className="mt-2 flex flex-col gap-4">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link color="foreground" href="#" size="md">
-                {item.label}
-              </Link>
-            </NavbarMenuItem>
-          ))}
+        <div className="mt-2 flex flex-col justify-between h-dvh py-5 gap-4">
+          <div>
+            {siteConfig.navItems.map((item, index) => (
+              <NavbarMenuItem key={`${item}-${index}`}>
+                <Link color="foreground" href="#">
+                  {item.label}
+                </Link>
+              </NavbarMenuItem>
+            ))}
+          </div>
+          <Button
+            as={Link}
+            className={`${styles.button_primary} h-[46px]`}
+            href="/sales-team"
+            style={{ fontSize: "14px" }}
+            variant="flat"
+          >
+            Talk to Sales
+          </Button>
         </div>
       </NavbarMenu>
     </NextUINavbar>

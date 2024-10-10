@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Zanbio | Simplify Your Invoicing with Zanbio",
+  description: "Simplify Your Invoicing with Zanbio",
   navItems: [
     {
       label: "Home",
@@ -17,25 +17,4 @@ export const siteConfig = {
       href: "/benefits",
     },
   ],
-  navMenuItems: [
-    {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "Features",
-      href: "/features",
-    },
-    {
-      label: "Benefits",
-      href: "/benefits",
-    },
-  ],
-  links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui.org",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
-  },
 };

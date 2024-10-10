@@ -1,4 +1,5 @@
 import { Button } from "@nextui-org/button";
+import Link from "next/link";
 
 import styles from "@/styles/style.module.scss";
 import BgTagline from "@/assets/illustrations/bg-tagline.png";
@@ -22,7 +23,13 @@ export default function Benefits() {
           Join over 300+ partners and customers already growing with Benefits.
         </h6>
 
-        <Button className={styles.tagline__content_cta}>Talk to Sales</Button>
+        <Button
+          as={Link}
+          className={styles.tagline__content_cta}
+          href="/sales-team"
+        >
+          Talk to Sales
+        </Button>
       </div>
     </div>
   );

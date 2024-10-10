@@ -4,7 +4,8 @@ $text-black-color: #1c2433;
 $text-gray-color: #666d80;
 $text-secondary-color: #f8fafb;
 $text-primary-50: #e6eefa;
-$text-third-color: #C1C7D0;
+$text-third-color: #c1c7d0;
+$text-darkgray-color: #36394A;
 
 .button {
   &_primary {
@@ -15,17 +16,17 @@ $text-third-color: #C1C7D0;
 
 .text {
   &_super {
-    @apply font-medium text-5xl lg:text-[68px] xl:leading-[85px];
+    @apply font-medium text-5xl lg:text-6xl xl:text-[68px] xl:leading-[85px];
     color: $text-black-color;
   }
 
   &_subtitle {
-    @apply text-[18px] font-normal xl:leading-[27.9px];
+    @apply text-base xl:text-lg font-normal xl:leading-[27.9px];
     color: $text-gray-color;
   }
 
   &_heading_1 {
-    @apply font-semibold xl:leading-[29px] text-2xl;
+    @apply font-semibold xl:leading-[29px] text-xl lg:text-2xl;
     color: $text-secondary-color;
   }
 
@@ -44,7 +45,7 @@ $text-third-color: #C1C7D0;
   }
 
   &_button {
-    @apply font-semibold text-base xl:leading-[24.8px];
+    @apply font-semibold text-sm xl:leading-[24.8px];
   }
 }
 
@@ -62,7 +63,7 @@ $text-third-color: #C1C7D0;
   &__content {
     @apply flex-center-col-content;
     @apply relative text-center;
-    @apply max-w-7xl mx-auto z-[1] py-20 px-6 lg:px-0;
+    @apply max-w-7xl mx-auto z-[1] py-20 px-6 lg:px-4;
   }
 
   &__cta {
@@ -81,11 +82,11 @@ $text-third-color: #C1C7D0;
   }
 
   &__title {
-    @apply text-[52px] text-white my-4;
+    @apply text-4xl lg:text-5xl xl:text-[52px] text-white my-4;
   }
 
   &__subtitle {
-    @apply lg:max-w-[820px] mx-auto;
+    @apply text-sm lg:text-base xl:text-lg lg:max-w-[820px] mx-auto;
     color: $text-secondary-color;
   }
 
@@ -94,7 +95,7 @@ $text-third-color: #C1C7D0;
   }
 
   &__content {
-    @apply lg:py-[80px] flex flex-col lg:flex-row items-center gap-5 lg:gap-10 xl:gap-24;
+    @apply lg:py-[80px] flex flex-col lg:flex-row items-center gap-5 lg:gap-8 xl:gap-24;
 
     &_swap {
       @apply lg:pt-[60px];
@@ -109,12 +110,12 @@ $text-third-color: #C1C7D0;
     }
 
     &_container {
-      @apply w-full md:w-3/4 lg:w-[45%] order-2 lg:order-1 mb-12 lg:mb-0;
+      @apply w-full lg:w-3/4 xl:w-[45%] order-2 lg:order-1 mb-12 lg:mb-0;
       color: $text-secondary-color;
     }
 
     &_img {
-      @apply w-full md:w-3/4 lg:w-[55%] order-1 lg:order-2;
+      @apply w-full lg:w-3/4 xl:w-[55%] order-1 lg:order-2;
     }
 
     &_head {
@@ -122,7 +123,11 @@ $text-third-color: #C1C7D0;
     }
 
     &_title {
-      @apply text-[48px] my-4;
+      @apply text-3xl lg:text-4xl xl:text-[48px] my-4;
+    }
+
+    &_subtitle {
+      @apply text-sm lg:text-base xl:text-lg;
     }
 
     &_title,
@@ -142,12 +147,12 @@ $text-third-color: #C1C7D0;
   @apply py-20 px-6;
 
   &__title {
-    @apply text-[52px] my-4;
+    @apply text-4xl lg:text-5xl xl:text-[52px] my-4;
     color: $text-black-color;
   }
 
   &__subtitle {
-    @apply lg:max-w-[800px] mx-auto;
+    @apply text-sm lg:text-base xl:text-lg lg:max-w-[800px] mx-auto;
     color: $text-gray-color;
   }
 
@@ -155,7 +160,7 @@ $text-third-color: #C1C7D0;
     @apply text-center mb-[60px];
 
     &_title {
-        color: $brand-color;
+      color: $brand-color;
     }
   }
 
@@ -164,14 +169,14 @@ $text-third-color: #C1C7D0;
   }
 
   &__item {
-    @apply p-6 border shadow-md rounded-2xl h-fit md:h-[469px] flex flex-col;
+    @apply p-5 lg:p-6 border shadow-md rounded-2xl h-fit md:h-[469px] flex flex-col;
 
     &_title {
-      @apply text-2xl font-medium leading-7;
+      @apply text-xl lg:text-2xl font-medium leading-7;
       color: $text-black-color;
     }
     &_subtitle {
-      @apply text-lg font-normal leading-6 mt-3 mb-6;
+      @apply text-sm lg:text-lg font-normal leading-6 mt-3 mb-6;
       color: $text-gray-color;
     }
     &_illustration {
@@ -193,7 +198,7 @@ $text-third-color: #C1C7D0;
     h4 {
       color: $text-secondary-color;
     }
-    
+
     h6 {
       color: $text-secondary-color;
       @apply mb-8 mt-4;
@@ -207,9 +212,9 @@ $text-third-color: #C1C7D0;
 }
 
 .footer {
-  @apply bg-[#0D0D12] ;
+  @apply bg-[#0D0D12];
   color: $text-third-color;
-  
+
   &__content {
     @apply max-w-7xl mx-auto border-none;
     @apply py-20 px-6 flex flex-col md:flex-row items-center justify-between gap-8;
@@ -223,7 +228,7 @@ $text-third-color: #C1C7D0;
     }
 
     &_right {
-      @apply w-full md:max-w-fit
+      @apply w-full md:max-w-fit;
     }
   }
 
@@ -231,5 +236,46 @@ $text-third-color: #C1C7D0;
     @apply bg-white h-[40px] px-6 text-base font-medium;
     color: $text-black-color;
   }
-  
+}
+
+.sales {
+  @apply py-10 md:py-[80px] max-w-7xl mx-auto px-5 md:px-6;
+
+  &__head {
+    @apply mb-10 md:mb-[60px];
+    &_title {
+      @apply text-3xl md:text-5xl leading-normal md:leading-[60px] font-medium text-center;
+    }
+  }
+
+  &__content {
+    @apply flex flex-col md:flex-row items-center gap-4 md:gap-[80px];
+    &_form {
+      @apply flex-1 w-full;
+      &_success {
+        @apply p-5 pr-11 border-2 rounded-xl border-[#40C4AA] flex flex-col gap-6;
+
+        &_title {
+          @apply font-medium mb-2;
+          color: $text-black-color
+        }
+        &_subtitle {
+          @apply text-base leading-6 text-justify;
+          color: $text-gray-color;
+        }
+        &_cta {
+          @apply w-fit px-5 border-[#DFE1E7] text-base font-semibold text-[#000005F2] h-[48px]
+        }
+      }
+    }
+  }
+}
+
+.field {
+  &__input {
+    label {
+      @apply text-sm font-medium mb-2;
+      color: $text-darkgray-color;
+    }
+  }
 }
