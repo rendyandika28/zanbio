@@ -8,24 +8,30 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)"],
-        mono: ["var(--font-mono)"],
-      },
-    },
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: colors.black,
-      white: colors.white,
-      gray: colors.gray,
-      emerald: colors.emerald,
-      indigo: colors.indigo,
-      yellow: colors.yellow,
-      'brand': '#0052CC',
-    },
+  	extend: {
+  		fontFamily: {
+  			sans: ["var(--font-sans)"],
+  			mono: ["var(--font-mono)"]
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		colors: {}
+  	},
+  	colors: {
+  		transparent: 'transparent',
+  		current: 'currentColor',
+  		black: colors.black,
+  		white: colors.white,
+  		gray: colors.gray,
+  		emerald: colors.emerald,
+  		indigo: colors.indigo,
+  		yellow: colors.yellow,
+  		brand: '#0052CC'
+  	}
   },
-  darkMode: "class",
-  plugins: [nextui()],
+  darkMode: ["class"],
+  plugins: [nextui(), require("tailwindcss-animate")],
 }

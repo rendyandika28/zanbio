@@ -1,24 +1,43 @@
 "use client";
 
-import Image from "next/image";
-import { SubmitHandler } from "react-hook-form";
-import { useState } from "react";
 import { Button } from "@nextui-org/button";
+import Image from "next/image";
+import { useState } from "react";
+import { SubmitHandler } from "react-hook-form";
 
 import FormSales from "../_components/form/sales";
 
 import AcceptIcon from "@/assets/icons/accepted.svg";
 import SalesTeamImg from "@/assets/images/sales-team.png";
+import { useToast } from "@/hooks/use-toast";
 import styles from "@/styles/style.module.scss";
 import { IFormInput } from "@/types/form";
 
-
 export default function SalesTeam() {
   const [isSuccessSubmitForm, setIsSuccessSubmitForm] = useState(false);
+  const { toast } = useToast()
   const onSubmit: SubmitHandler<IFormInput> = async (data: IFormInput) => {
-    console.log(data);
-  };
+    const _response = await fetch("/api/contact-sales", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
 
+    const response = await _response.json();
+
+    if (response?.statusCode == 200) {
+      return toast({
+        title: "Success send message",
+        description: "We'll catch you after receive your message",
+      })
+    }
+
+    return toast({
+      title: "Uh oh! Something went wrong.",
+      description: "There was a problem with your request.",
+      variant: "destructive",
+      className: " bg-[#DC2625] text-white",
+    });
+  };
 
   return (
     <main className={styles.sales}>
