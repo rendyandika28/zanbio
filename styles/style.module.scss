@@ -34,9 +34,9 @@ $text-darkgray-color: #36394A;
     &_primary {
       background: linear-gradient(
         269.97deg,
-        #33cfff 64.42%,
-        #40c4aa 69.87%,
-        #208bbb 82.21%,
+        #33cfff 1%,
+        #40c4aa 19.87%,
+        #208bbb 42.21%,
         #0052cc 91.57%
       );
       -webkit-background-clip: text;
@@ -69,6 +69,23 @@ $text-darkgray-color: #36394A;
   &__cta {
     @apply button_primary h-[52px] w-[140px] mt-10 mb-[60px];
   }
+
+  &__infos {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4 xl:gap-8 text-left;
+
+    &_item {
+      @apply p-4 md:p-6 xl:p-8 max-w-[250px] text-center;
+
+      h4 {
+        @apply text-2xl lg:text-[48px] leading-10 lg:leading-[60px] font-bold;
+      }
+
+      h5 {
+        @apply text-base lg:text-lg leading-5 lg:leading-[27px] font-medium;
+        color: $text-gray-color
+      }
+    }
+  }
 }
 
 .features {
@@ -82,7 +99,7 @@ $text-darkgray-color: #36394A;
   }
 
   &__title {
-    @apply text-4xl lg:text-5xl xl:text-[52px] text-white my-4 leading-tight lg:leading-[60px];
+    @apply text-4xl lg:text-5xl xl:text-[52px] text-white my-4 leading-tight lg:leading-[65px];
   }
 
   &__subtitle {
@@ -94,8 +111,25 @@ $text-darkgray-color: #36394A;
     @apply text-center mb-[40px];
   }
 
+  &__infos {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-8 text-left;
+
+    &_item {
+      @apply p-4 md:p-6 xl:p-8 bg-white/10 rounded-xl backdrop-blur text-white border border-[#666D80];
+
+      h4 {
+        @apply text-xl lg:text-2xl leading-7 tracking-[-2%] font-medium mb-2;
+      }
+
+      h5 {
+        @apply text-base font-normal;
+        color: $text-secondary-color;
+      }
+    }
+  }
+
   &__content {
-    @apply lg:py-[80px] flex flex-col lg:flex-row items-center gap-5 lg:gap-8 xl:gap-24;
+    @apply lg:py-[80px] flex flex-col lg:flex-row items-center gap-5 lg:gap-8 xl:gap-12;
 
     &_swap {
       @apply lg:pt-[60px];
@@ -169,7 +203,7 @@ $text-darkgray-color: #36394A;
   }
 
   &__item {
-    @apply p-5 lg:p-6 border shadow-md rounded-2xl h-fit md:h-[469px] flex flex-col;
+    @apply p-5 lg:p-6 border border-[#DFE1E7] rounded-2xl h-fit md:h-[469px] flex flex-col;
 
     &_title {
       @apply text-xl lg:text-2xl font-medium leading-7;

@@ -56,7 +56,7 @@ export const Navbar = () => {
 
   return (
     <NextUINavbar
-      className="border-b py-2"
+      className="border-b py-2 bg-white"
       isMenuOpen={isMenuOpen}
       maxWidth="xl"
       position="sticky"

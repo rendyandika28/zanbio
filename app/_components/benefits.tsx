@@ -59,7 +59,10 @@ export default function Benefits({
             {metaBenefits?.title}
           </h2>
           <h3 className={`${styles.text_super} ${styles.benefits__title}`}>
-            {metaBenefits?.subtitle}
+            Benefits of{" "}
+            <span className={styles.text_gradient_primary}>
+              {metaBenefits?.subtitle}
+            </span>
           </h3>
         </div>
 

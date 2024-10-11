@@ -37,11 +37,11 @@ export default function MotionSection({
       variants.visible["y"] = 0;
       break;
     case Directions.Left:
-      variants.hidden["x"] = -50;
+      variants.hidden["x"] = -20;
       variants.visible["x"] = 0;
       break;
     case Directions.Right:
-      variants.hidden["x"] = 50;
+      variants.hidden["x"] = 20;
       variants.visible["x"] = 0;
       break;
     case Directions.Up:
