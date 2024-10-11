@@ -30,7 +30,7 @@ export default function Home() {
       <InView
         as="div"
         id="features"
-        threshold={0.38}
+        threshold={0.25}
         onChange={(inView) => getActiveSection(inView, "features")}
       >
         <Features />
@@ -38,7 +38,7 @@ export default function Home() {
       <InView
         as="div"
         id="benefits"
-        threshold={0.38}
+        threshold={0.33}
         onChange={(inView) => getActiveSection(inView, "benefits")}
       >
         <Benefits metaBenefits={metaBenefitsOfAR} />
