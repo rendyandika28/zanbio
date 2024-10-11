@@ -1,14 +1,14 @@
 import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
+import { Metadata, Viewport } from "next";
 
 import { Providers } from "./providers";
 
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
+import { Toaster } from "@/components/ui/toaster";
 import { Navbar } from "@/components/navbar";
-import Image from "next/image";
+import { fontSans } from "@/config/fonts";
+import { siteConfig } from "@/config/site";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -37,36 +37,20 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body
+        suppressHydrationWarning
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          {/* <div className="relative flex flex-col h-screen">
+        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+          <div className="relative min-h-dvh flex flex-col">
             <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-                title="nextui.org homepage"
-              >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">NextUI</p>
-              </Link>
-            </footer>
-          </div> */}
-          <div className="h-screen grid place-items-center">
-            <div className="flex items-center gap-4  animate-pulse">
-              <Image src={'logo-brand.svg'} width={80} height={80} alt="logo brand"/>
-              <h3 className="uppercase text-7xl text-gray-300">under constructions</h3>
-            </div>
+            <main className="flex-1">{children}</main>
+            <Footer />
           </div>
         </Providers>
+        <Toaster />
       </body>
     </html>
   );

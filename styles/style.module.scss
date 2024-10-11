@@ -1,0 +1,281 @@
+// variable
+$brand-color: #0052cc;
+$text-black-color: #1c2433;
+$text-gray-color: #666d80;
+$text-secondary-color: #f8fafb;
+$text-primary-50: #e6eefa;
+$text-third-color: #c1c7d0;
+$text-darkgray-color: #36394A;
+
+.button {
+  &_primary {
+    @apply text-white text_button;
+    background: $brand-color;
+  }
+}
+
+.text {
+  &_super {
+    @apply font-medium text-5xl lg:text-6xl xl:text-[68px] xl:leading-[85px];
+    color: $text-black-color;
+  }
+
+  &_subtitle {
+    @apply text-base xl:text-lg font-normal xl:leading-[27.9px];
+    color: $text-gray-color;
+  }
+
+  &_heading_1 {
+    @apply font-semibold xl:leading-[29px] text-xl lg:text-2xl;
+    color: $text-secondary-color;
+  }
+
+  &_gradient {
+    &_primary {
+      background: linear-gradient(
+        269.97deg,
+        #33cfff 64.42%,
+        #40c4aa 69.87%,
+        #208bbb 82.21%,
+        #0052cc 91.57%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &_button {
+    @apply font-semibold text-sm xl:leading-[24.8px];
+  }
+}
+
+.flex-center-col-content {
+  @apply flex flex-col justify-center items-center;
+}
+
+.introduction {
+  @apply relative;
+
+  &__background {
+    @apply absolute inset-0 bg-bottom bg-cover;
+  }
+
+  &__content {
+    @apply flex-center-col-content;
+    @apply relative text-center;
+    @apply max-w-7xl mx-auto z-[1] py-20 px-6 lg:px-4;
+  }
+
+  &__cta {
+    @apply button_primary h-[52px] w-[140px] mt-10 mb-[60px];
+  }
+}
+
+.features {
+  @apply relative;
+  &__background {
+    @apply absolute inset-0 bg-bottom bg-cover;
+  }
+  &__container {
+    @apply max-w-7xl mx-auto z-[1] relative;
+    @apply py-20 px-6;
+  }
+
+  &__title {
+    @apply text-4xl lg:text-5xl xl:text-[52px] text-white my-4 leading-tight lg:leading-[60px];
+  }
+
+  &__subtitle {
+    @apply text-sm lg:text-base xl:text-lg lg:max-w-[800px] mx-auto;
+    color: $text-secondary-color;
+  }
+
+  &__head {
+    @apply text-center mb-[40px];
+  }
+
+  &__content {
+    @apply lg:py-[80px] flex flex-col lg:flex-row items-center gap-5 lg:gap-8 xl:gap-24;
+
+    &_swap {
+      @apply lg:pt-[60px];
+
+      .features__content_container {
+        @apply order-2;
+      }
+
+      .features__content_img {
+        @apply order-1;
+      }
+    }
+
+    &_container {
+      @apply w-full lg:w-3/4 xl:w-[45%] order-2 lg:order-1 mb-12 lg:mb-0;
+      color: $text-secondary-color;
+    }
+
+    &_img {
+      @apply w-full lg:w-3/4 xl:w-[55%] order-1 lg:order-2;
+    }
+
+    &_head {
+      color: $text-primary-50;
+    }
+
+    &_title {
+      @apply text-3xl lg:text-4xl xl:text-[48px] my-4 leading-tight lg:leading-[60px];
+    }
+
+    &_subtitle {
+      @apply text-sm lg:text-base xl:text-lg;
+    }
+
+    &_title,
+    &_subtitle {
+      color: $text-secondary-color;
+    }
+
+    &_cta {
+      @apply mt-4 px-12 h-[52px];
+      @apply text-white;
+    }
+  }
+}
+
+.benefits {
+  @apply max-w-7xl mx-auto z-[1] relative;
+  @apply py-20 px-6;
+
+  &__title {
+    @apply text-4xl lg:text-5xl xl:text-[52px] my-4;
+    color: $text-black-color;
+  }
+
+  &__subtitle {
+    @apply text-sm lg:text-base xl:text-lg lg:max-w-[800px] mx-auto;
+    color: $text-gray-color;
+  }
+
+  &__head {
+    @apply text-center mb-[60px];
+
+    &_title {
+      color: $brand-color;
+    }
+  }
+
+  &__list {
+    @apply grid lg:grid-cols-9 grid-cols-1 gap-6 md:gap-11;
+  }
+
+  &__item {
+    @apply p-5 lg:p-6 border shadow-md rounded-2xl h-fit md:h-[469px] flex flex-col;
+
+    &_title {
+      @apply text-xl lg:text-2xl font-medium leading-7;
+      color: $text-black-color;
+    }
+    &_subtitle {
+      @apply text-sm lg:text-lg font-normal leading-6 mt-3 mb-6;
+      color: $text-gray-color;
+    }
+    &_illustration {
+      @apply flex-1 rounded-lg p-2 pt-4 md:p-4 md:pb-0 pb-0 overflow-hidden;
+      background-color: $text-secondary-color;
+    }
+  }
+}
+
+.tagline {
+  @apply relative;
+  &__background {
+    @apply absolute inset-0 bg-bottom bg-cover bg-black;
+  }
+  &__content {
+    @apply max-w-7xl mx-auto z-[1] relative text-center;
+    @apply py-20 px-6 text-white;
+
+    h4 {
+      color: $text-secondary-color;
+    }
+
+    h6 {
+      color: $text-secondary-color;
+      @apply mb-8 mt-4;
+    }
+
+    &_cta {
+      @apply bg-white h-[52px] px-6 text-base font-medium;
+      color: $text-black-color;
+    }
+  }
+}
+
+.footer {
+  @apply bg-[#0D0D12];
+  color: $text-third-color;
+
+  &__content {
+    @apply max-w-7xl mx-auto border-none;
+    @apply py-20 px-6 flex flex-col md:flex-row items-center justify-between gap-8;
+
+    &_left {
+      @apply w-full md:max-w-[370px];
+      & .footer__tagline {
+        @apply text-base leading-6;
+        color: $text-third-color;
+      }
+    }
+
+    &_right {
+      @apply w-full md:max-w-fit;
+    }
+  }
+
+  &__cta {
+    @apply bg-white h-[40px] px-6 text-base font-medium;
+    color: $text-black-color;
+  }
+}
+
+.sales {
+  @apply py-10 md:py-[80px] max-w-7xl mx-auto px-5 md:px-6;
+
+  &__head {
+    @apply mb-10 md:mb-[60px];
+    &_title {
+      @apply text-3xl md:text-5xl leading-normal md:leading-[60px] font-medium text-center;
+    }
+  }
+
+  &__content {
+    @apply grid grid-cols-1 md:grid-cols-8 gap-4 lg:gap-8 xl:gap-[80px];
+    &_form {
+      @apply col-span-4;
+      &_success {
+        @apply p-5 pr-11 border-2 rounded-xl border-[#40C4AA] flex flex-col gap-6;
+
+        &_title {
+          @apply font-medium mb-2;
+          color: $text-black-color
+        }
+        &_subtitle {
+          @apply text-base leading-6 text-justify;
+          color: $text-gray-color;
+        }
+        &_cta {
+          @apply w-fit px-5 border-[#DFE1E7] text-base font-semibold text-[#000005F2] h-[48px]
+        }
+      }
+    }
+  }
+}
+
+.field {
+  &__input {
+    label {
+      @apply text-sm font-medium mb-2;
+      color: $text-darkgray-color;
+    }
+  }
+}
