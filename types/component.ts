@@ -7,7 +7,7 @@ export interface Benefit {
 }
 
 export interface MetaBenefits {
-  title: string
-  subtitle: string
-  contents: Benefit[]
+  title: string;
+  subtitle: string;
+  contents: Benefit[];
 }

@@ -1,8 +1,13 @@
 import { create } from "zustand";
 
-const useMenuStore = create((set) => ({
+export interface MenuStore {
+  activeMenu: string;
+  setActiveMenu: (value: string) => void;
+}
+
+const useMenuStore = create<MenuStore>((set) => ({
   activeMenu: "introduction",
-  setActiveMenu: (value: boolean) => set({ activeMenu: value }),
+  setActiveMenu: (value: string) => set({ activeMenu: value }),
 }));
 
 export default useMenuStore;

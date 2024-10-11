@@ -4,6 +4,7 @@ import { Button } from "@nextui-org/button";
 import Image from "next/image";
 import { useState } from "react";
 import { SubmitHandler } from "react-hook-form";
+import Link from "next/link";
 
 import FormSales from "../_components/form/sales";
 
@@ -12,11 +13,10 @@ import SalesTeamImg from "@/assets/images/sales-team.png";
 import { useToast } from "@/hooks/use-toast";
 import styles from "@/styles/style.module.scss";
 import { IFormInput } from "@/types/form";
-import Link from "next/link";
 
 export default function SalesTeam() {
   const [isSuccessSubmitForm, setIsSuccessSubmitForm] = useState(false);
-  const { toast } = useToast()
+  const { toast } = useToast();
   const onSubmit: SubmitHandler<IFormInput> = async (data: IFormInput) => {
     const _response = await fetch("/api/contact-sales", {
       method: "POST",
@@ -26,12 +26,12 @@ export default function SalesTeam() {
     const response = await _response.json();
 
     if (response?.statusCode == 200) {
-      setIsSuccessSubmitForm(true)
+      setIsSuccessSubmitForm(true);
 
       return toast({
         title: "Success send message",
         description: "We'll catch you after receive your message",
-      })
+      });
     }
 
     return toast({
@@ -84,10 +84,10 @@ export default function SalesTeam() {
                 </h6>
               </div>
               <Button
-                className={styles.sales__content_form_success_cta}
-                variant="bordered"
                 as={Link}
+                className={styles.sales__content_form_success_cta}
                 href="/"
+                variant="bordered"
               >
                 Back to home
               </Button>

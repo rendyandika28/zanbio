@@ -1,33 +1,49 @@
-"use client"
+"use client";
+import { InView } from "react-intersection-observer";
+
 import Benefits from "./_components/benefits";
 import Features from "./_components/features";
 import Introduction from "./_components/introduction";
 import Tagline from "./_components/tagline";
 
-import { InView } from "react-intersection-observer";
 import useMenuStore from "@/store/use-menu-store";
 import { metaBenefitsOfAP, metaBenefitsOfAR } from "@/constant/benefits";
 
 export default function Home() {
-  const setActiveMenu = useMenuStore(state => state.setActiveMenu)
+  const setActiveMenu = useMenuStore((state) => state.setActiveMenu);
   const getActiveSection = (inView: boolean, sectionId: string) => {
     if (inView) {
-        setActiveMenu(sectionId as string)
+      setActiveMenu(sectionId as string);
     }
-  }
+  };
 
   return (
     <main>
-      <InView threshold={0.4} id="introduction" as="div" onChange={(inView) => getActiveSection(inView, "introduction")}>
+      <InView
+        as="div"
+        id="introduction"
+        threshold={0.4}
+        onChange={(inView) => getActiveSection(inView, "introduction")}
+      >
         <Introduction />
       </InView>
-      <InView threshold={0.4} id="features" as="div" onChange={(inView) => getActiveSection(inView, "features")}>
+      <InView
+        as="div"
+        id="features"
+        threshold={0.4}
+        onChange={(inView) => getActiveSection(inView, "features")}
+      >
         <Features />
       </InView>
-      <InView threshold={0.4} id="benefits" as="div" onChange={(inView) => getActiveSection(inView, "benefits")}>
-        <Benefits metaBenefits={metaBenefitsOfAR}/>
+      <InView
+        as="div"
+        id="benefits"
+        threshold={0.4}
+        onChange={(inView) => getActiveSection(inView, "benefits")}
+      >
+        <Benefits metaBenefits={metaBenefitsOfAR} />
       </InView>
-        <Benefits metaBenefits={metaBenefitsOfAP}/>
+      <Benefits metaBenefits={metaBenefitsOfAP} />
       <Tagline />
     </main>
   );

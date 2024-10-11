@@ -4,7 +4,7 @@ import { Metadata, Viewport } from "next";
 
 import { Providers } from "./providers";
 
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
 import { Navbar } from "@/components/navbar";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";

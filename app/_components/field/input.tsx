@@ -8,7 +8,7 @@ interface FieldInput {
   placeholder: string;
   type?: string;
   name: string;
-  control: any,
+  control: any;
 }
 
 export default function FieldInput({
@@ -16,7 +16,7 @@ export default function FieldInput({
   placeholder,
   type = "text",
   name,
-  control
+  control,
 }: FieldInput) {
   const {
     field,

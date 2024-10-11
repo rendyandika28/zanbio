@@ -13,15 +13,19 @@ export default function Introduction() {
         className={styles.introduction__background}
         style={{
           backgroundImage: `url(${BgIntroductionGradient.src})`,
-      }}/>
+        }}
+      />
       <MotionSection directions="up">
         <div className={styles.introduction__content}>
           <h1 className={styles.text_super}>
-            <span className={styles.text_gradient_primary}>Improve</span> your Cashflow with <br />
+            <span className={styles.text_gradient_primary}>Improve</span> your
+            Cashflow with <br />
             Zanbio
           </h1>
           <h4 className={`lg:max-w-[720px] mt-4 ${styles.text_subtitle}`}>
-            Everything you need to get your customers to <strong>Pay You Faster</strong> and <strong>Optimise Payments</strong> to your vendors, in one place
+            Everything you need to get your customers to{" "}
+            <strong>Pay You Faster</strong> and{" "}
+            <strong>Optimise Payments</strong> to your vendors, in one place
           </h4>
 
           <Button
@@ -32,7 +36,7 @@ export default function Introduction() {
             Talk to Sales
           </Button>
 
-          <Image 
+          <Image
             priority
             alt="introduction-illustration"
             className="size-full"
@@ -43,5 +47,5 @@ export default function Introduction() {
         </div>
       </MotionSection>
     </div>
-  )
+  );
 }

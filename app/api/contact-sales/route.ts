@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
 import { IFormInput } from "@/types/form";
 import ValidationFormSchema from "@/formschema/sales-connect-formschema";
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       auth: {
         user: username,
         pass: password,
-      }
+      },
     });
 
     const mail = await transporter.sendMail({
@@ -99,18 +99,19 @@ export async function POST(request: Request) {
       `,
     });
 
-    return NextResponse.json({
+    return NextResponse.json(
+      {
         statusMessage: "Success send form",
         statusCode: 200,
-        data: null
+        data: null,
       },
       {
         status: 200,
         statusText: "OK",
       },
     );
-  } catch (error) {
-    if (error?.name === "ValidationError") {
+  } catch (error: any) {
+    if (error.name && error.name === "ValidationError") {
       return NextResponse.json(
         {
           data: null,

@@ -1,8 +1,8 @@
 import { Benefit, MetaBenefits } from "@/types/component";
-import BenefitAutomatedInvoicing from "@/assets/illustrations/benefits-automated-invoicing.svg"
-import BenefitCashFlow from "@/assets/illustrations/benefits-cash-flow.svg"
-import BenefitCentralizedManagement from "@/assets/illustrations/benefits-centralized-management.svg"
-import BenefitPaymentTracking from "@/assets/illustrations/benefits-payment-tracking.svg"
+import BenefitAutomatedInvoicing from "@/assets/illustrations/benefits-automated-invoicing.svg";
+import BenefitCashFlow from "@/assets/illustrations/benefits-cash-flow.svg";
+import BenefitCentralizedManagement from "@/assets/illustrations/benefits-centralized-management.svg";
+import BenefitPaymentTracking from "@/assets/illustrations/benefits-payment-tracking.svg";
 
 const benefitsOfAR: Benefit[] = [
   {
@@ -40,7 +40,7 @@ const benefitsOfAR: Benefit[] = [
     illustration: BenefitAutomatedInvoicing,
     illustrationClassName: "size-full",
   },
-]
+];
 
 const benefitsOfAP: Benefit[] = [
   {
@@ -78,17 +78,16 @@ const benefitsOfAP: Benefit[] = [
     illustration: BenefitAutomatedInvoicing,
     illustrationClassName: "size-full",
   },
-]
+];
 
 export const metaBenefitsOfAP: MetaBenefits = {
-  title: 'Benefits',
-  subtitle: 'Benefits of AP Automation',
-  contents: benefitsOfAP
-}
+  title: "Benefits",
+  subtitle: "Benefits of AP Automation",
+  contents: benefitsOfAP,
+};
 
 export const metaBenefitsOfAR: MetaBenefits = {
-  title: 'Benefits',
-  subtitle: 'Benefits of AR Automation',
-  contents: benefitsOfAR
-}
-
+  title: "Benefits",
+  subtitle: "Benefits of AR Automation",
+  contents: benefitsOfAR,
+};

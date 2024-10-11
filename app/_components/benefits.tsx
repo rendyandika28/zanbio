@@ -1,13 +1,16 @@
 import Image from "next/image";
 
 import styles from "@/styles/style.module.scss";
-
 import MotionSection from "@/components/motion/section";
 import { Benefit, MetaBenefits } from "@/types/component";
 
-export default function Benefits({ metaBenefits }: { metaBenefits?: MetaBenefits }) {
-  const Benefit = ({ benefit, index }: { benefit: Benefit, index: number }) => {
-    let colSpan
+export default function Benefits({
+  metaBenefits,
+}: {
+  metaBenefits?: MetaBenefits;
+}) {
+  const Benefit = ({ benefit, index }: { benefit: Benefit; index: number }) => {
+    let colSpan;
 
     switch (index) {
       case 0:
@@ -22,7 +25,7 @@ export default function Benefits({ metaBenefits }: { metaBenefits?: MetaBenefits
         colSpan = "col-span-1 lg:col-span-9";
         break;
     }
-    
+
     return (
       <div className={`${styles.benefits__item} ${colSpan}`}>
         <h3 className={styles.benefits__item_title}>{benefit.title}</h3>
@@ -40,10 +43,14 @@ export default function Benefits({ metaBenefits }: { metaBenefits?: MetaBenefits
         </div>
       </div>
     );
-  }
+  };
 
   return (
-    <MotionSection key={metaBenefits?.subtitle} directions="up" threshold={0.15}>
+    <MotionSection
+      key={metaBenefits?.subtitle}
+      directions="up"
+      threshold={0.15}
+    >
       <div className={styles.benefits}>
         <div className={styles.benefits__head}>
           <h2
@@ -58,10 +65,10 @@ export default function Benefits({ metaBenefits }: { metaBenefits?: MetaBenefits
 
         <div className={styles.benefits__list}>
           {metaBenefits?.contents.map((benefit, index) => (
-            <Benefit key={index} benefit={benefit} index={index}/>
+            <Benefit key={index} benefit={benefit} index={index} />
           ))}
         </div>
       </div>
     </MotionSection>
-  )
+  );
 }
