@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import styles from "@/styles/style.module.scss";
 import BgTagline from "@/assets/illustrations/bg-tagline.png";
+import MotionSection from "@/components/motion/section";
 
 export default function Benefits() {
   return (
@@ -13,24 +14,26 @@ export default function Benefits() {
           backgroundImage: `url(${BgTagline.src})`,
         }}
       />
-      <div className={styles.tagline__content}>
-        <h4 className={styles.text_super}>
-          Simplify Your Invoicing <br /> with
-          <span className={styles.text_gradient_primary}> Zanbio</span>
-        </h4>
+      <MotionSection directions="up">
+        <div className={styles.tagline__content}>
+          <h4 className={styles.text_super}>
+            Simplify Your Invoicing <br /> with
+            <span className={styles.text_gradient_primary}> Zanbio</span>
+          </h4>
 
-        <h6 className={styles.text_subtitle}>
-          Join over 300+ partners and customers already growing with Benefits.
-        </h6>
+          <h6 className={styles.text_subtitle}>
+            Join over 300+ partners and customers already growing with Benefits.
+          </h6>
 
-        <Button
-          as={Link}
-          className={styles.tagline__content_cta}
-          href="/sales-team"
-        >
-          Talk to Sales
-        </Button>
-      </div>
+          <Button
+            as={Link}
+            className={styles.tagline__content_cta}
+            href="/sales-team"
+          >
+            Talk to Sales
+          </Button>
+        </div>
+      </MotionSection>
     </div>
   );
 }

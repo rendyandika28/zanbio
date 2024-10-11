@@ -6,6 +6,7 @@ import BenefitCashFlow from "@/assets/illustrations/benefits-cash-flow.svg"
 import BenefitCentralizedManagement from "@/assets/illustrations/benefits-centralized-management.svg"
 import BenefitPaymentTracking from "@/assets/illustrations/benefits-payment-tracking.svg"
 
+import MotionSection from "@/components/motion/section";
 
 interface Benefit {
   title: string
@@ -72,31 +73,33 @@ export default function Benefits() {
   }
 
   return (
-    <div className={styles.benefits}>
-      <div className={styles.benefits__head}>
-        <h2
-          className={`${styles.text_heading_1} ${styles.benefits__head_title}`}
-        >
-          Benefits
-        </h2>
-        <h3 className={`${styles.text_super} ${styles.benefits__title}`}>
-          What You Get from{" "}
-          <span className={styles.text_gradient_primary}>Zanbio</span>
-        </h3>
-        <h4 className={`${styles.text_subtitle} ${styles.benefits__subtitle}`}>
-          With Zanbio, managing your business finances has never been easier.
-          From automating invoices to keeping track of your payables and
-          receivables, Zanbio offers a complete solution to help you stay on top
-          of your financial game. Save time, reduce errors, and make smarter
-          decisions with everything you need in one intuitive platform.
-        </h4>
-      </div>
+    <MotionSection directions="up">
+      <div className={styles.benefits}>
+        <div className={styles.benefits__head}>
+          <h2
+            className={`${styles.text_heading_1} ${styles.benefits__head_title}`}
+          >
+            Benefits
+          </h2>
+          <h3 className={`${styles.text_super} ${styles.benefits__title}`}>
+            What You Get from{" "}
+            <span className={styles.text_gradient_primary}>Zanbio</span>
+          </h3>
+          <h4 className={`${styles.text_subtitle} ${styles.benefits__subtitle}`}>
+            With Zanbio, managing your business finances has never been easier.
+            From automating invoices to keeping track of your payables and
+            receivables, Zanbio offers a complete solution to help you stay on top
+            of your financial game. Save time, reduce errors, and make smarter
+            decisions with everything you need in one intuitive platform.
+          </h4>
+        </div>
 
-      <div className={styles.benefits__list}>
-        {benefits.map((benefit, index) => (
-          <Benefit key={index} benefit={benefit} />
-        ))}
+        <div className={styles.benefits__list}>
+          {benefits.map((benefit, index) => (
+            <Benefit key={index} benefit={benefit} />
+          ))}
+        </div>
       </div>
-    </div>
+    </MotionSection>
   )
 }

@@ -12,6 +12,7 @@ import SalesTeamImg from "@/assets/images/sales-team.png";
 import { useToast } from "@/hooks/use-toast";
 import styles from "@/styles/style.module.scss";
 import { IFormInput } from "@/types/form";
+import Link from "next/link";
 
 export default function SalesTeam() {
   const [isSuccessSubmitForm, setIsSuccessSubmitForm] = useState(false);
@@ -85,6 +86,8 @@ export default function SalesTeam() {
               <Button
                 className={styles.sales__content_form_success_cta}
                 variant="bordered"
+                as={Link}
+                href="/"
               >
                 Back to home
               </Button>

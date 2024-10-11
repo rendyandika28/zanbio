@@ -11,17 +11,28 @@ import {
   Navbar as NextUINavbar,
 } from "@nextui-org/navbar";
 import { Tab, Tabs } from "@nextui-org/tabs";
-import NextLink from "next/link";
+import { default as Link, default as NextLink } from "next/link";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
 
 import { Logo } from "@/components/icons";
 import { siteConfig } from "@/config/site";
+import useMenuStore from "@/store/use-menu-store";
 import styles from "@/styles/style.module.scss";
 
 
 export const Navbar = () => {
   const pathname = usePathname();
+  const activeMenu = useMenuStore(state => state.activeMenu)
+  const setActiveMenu = useMenuStore(state => state.setActiveMenu)
+
+  const onChangeMenu = (key: React.Key) => {
+    const y = document.getElementById(key)?.getBoundingClientRect().top + window.scrollY;
+    window.scroll({
+      top: y - 80,
+      behavior: 'smooth'
+    });
+    setActiveMenu(key as string)
+  }
 
   if (pathname !== "/") {
     return (
@@ -29,7 +40,7 @@ export const Navbar = () => {
         <NavbarContent justify="start">
           <NavbarBrand>
             <NextLink href="/">
-              <Logo customClass="w-36 lg:w-full"/>
+              <Logo customClass="w-36 lg:w-full" />
             </NextLink>
           </NavbarBrand>
         </NavbarContent>
@@ -42,7 +53,7 @@ export const Navbar = () => {
       <NavbarContent justify="start">
         <NavbarBrand>
           <NextLink href="/">
-            <Logo customClass="w-36 lg:w-full"/>
+            <Logo customClass="w-36 lg:w-full" />
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -54,6 +65,8 @@ export const Navbar = () => {
             aria-label="Tabs sizes"
             className="gap-0"
             size={"lg"}
+            selectedKey={activeMenu}
+            onSelectionChange={onChangeMenu}
           >
             {siteConfig.navItems.map((item) => (
               <Tab key={item.href} className="px-10" title={item.label} />
