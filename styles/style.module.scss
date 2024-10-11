@@ -233,7 +233,6 @@ $text-darkgray-color: #36394A;
     }
 
     &_cta {
-      @apply bg-white h-[52px] px-6 text-base font-medium;
       color: $text-black-color;
     }
   }
@@ -261,7 +260,6 @@ $text-darkgray-color: #36394A;
   }
 
   &__cta {
-    @apply bg-white h-[40px] px-6 text-base font-medium;
     color: $text-black-color;
   }
 }
