@@ -1,12 +1,36 @@
 import { Button } from "@nextui-org/button";
-import Image from "next/image";
 import Link from "next/link";
 
 import BgIntroductionGradient from "@/assets/illustrations/bg-introduction-gradient.png";
 import styles from "@/styles/style.module.scss";
 import MotionSection from "@/components/motion/section";
 
+interface CardInfo {
+  title: string;
+  short_description: string;
+}
+
 export default function Introduction() {
+  const cardInfos: CardInfo[] = [
+    {
+      title: "52%",
+      short_description: "Faster Payment Collection timing",
+    },
+    {
+      title: "30%",
+      short_description: "Less Receivable Management Cost",
+    },
+  ];
+
+  const CardInfo = ({ info }: { info: CardInfo }) => {
+    return (
+      <div className={styles.introduction__infos_item}>
+        <h4 className={styles.text_gradient_primary}>{info.title}</h4>
+        <h5>{info.short_description}</h5>
+      </div>
+    );
+  };
+
   return (
     <div className={styles.introduction}>
       <div
@@ -30,20 +54,17 @@ export default function Introduction() {
 
           <Button
             as={Link}
-            className={styles.introduction__cta}
+            className="bg-brand text-white h-[52px] text-sm px-[25px] mt-10 mb-[60px]"
             href="/sales-team"
           >
             Talk to Sales
           </Button>
 
-          <Image
-            priority
-            alt="introduction-illustration"
-            className="size-full"
-            height={100}
-            src="introduction-illustration.svg"
-            width={100}
-          />
+          <div className={styles.introduction__infos}>
+            {cardInfos.map((info, index) => (
+              <CardInfo key={`${info.title} with key ${index}`} info={info} />
+            ))}
+          </div>
         </div>
       </MotionSection>
     </div>

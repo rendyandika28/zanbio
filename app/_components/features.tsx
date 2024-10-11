@@ -5,8 +5,51 @@ import ImgFeaturesPayment from "@/assets/illustrations/features-payment.svg";
 import ImgFeaturesInvoice from "@/assets/illustrations/features-invoice.svg";
 import BgFeatures from "@/assets/illustrations/bg-features.png";
 import MotionSection from "@/components/motion/section";
+import EasyImplementationIcon from "@/assets/icons/features-easy-implementation.svg";
+import EasyUsabilityIcon from "@/assets/icons/features-easy-usability.svg";
+import MakingWorkFunIcon from "@/assets/icons/features-making-work-fun.svg";
+
+interface CardInfo {
+  title: string;
+  short_description: string;
+  icon: string;
+}
 
 export default function Features() {
+  const cardInfos: CardInfo[] = [
+    {
+      title: "Easy Implementation",
+      short_description: "you can get up and running in just weeks.",
+      icon: EasyImplementationIcon,
+    },
+    {
+      title: "Easy Usability",
+      short_description: "Start using with minimal training",
+      icon: EasyUsabilityIcon,
+    },
+    {
+      title: "Making work fun",
+      short_description: "Eliminate Chronic spreadsheet pain ",
+      icon: MakingWorkFunIcon,
+    },
+  ];
+
+  const CardInfo = ({ info }: { info: CardInfo }) => {
+    return (
+      <div className={styles.features__infos_item}>
+        <Image
+          alt="features-icon"
+          className="size-[68px] mb-6 -ml-1"
+          height={100}
+          src={info.icon}
+          width={100}
+        />
+        <h4>{info.title}</h4>
+        <h5>{info.short_description}</h5>
+      </div>
+    );
+  };
+
   return (
     <div className={styles.features}>
       <div
@@ -19,7 +62,8 @@ export default function Features() {
         <div className={styles.features__head}>
           <h2 className={styles.text_heading_1}>Features</h2>
           <h3 className={`${styles.text_super} ${styles.features__title}`}>
-            Helping to raise your Finance team’s <br /> quality of life
+            <span className={styles.text_gradient_primary}>Helping</span> to
+            raise your Finance team’s <br /> quality of life
           </h3>
           <h4
             className={`${styles.text_subtitle} ${styles.features__subtitle}`}
@@ -29,6 +73,12 @@ export default function Features() {
             Employees can focus on key tasks, raises total productivity and
             improve customer relationships
           </h4>
+        </div>
+
+        <div className={styles.features__infos}>
+          {cardInfos.map((info, index) => (
+            <CardInfo key={`${info.title} with key ${index}`} info={info} />
+          ))}
         </div>
 
         <MotionSection directions="left">

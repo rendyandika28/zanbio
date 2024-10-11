@@ -27,7 +27,7 @@ export default function Benefits() {
 
           <Button
             as={Link}
-            className={styles.tagline__content_cta}
+            className={`${styles.tagline__content_cta} bg-white h-[52px] px-6 text-base font-medium`}
             href="/sales-team"
           >
             Talk to Sales

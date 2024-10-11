@@ -32,7 +32,11 @@ export default function Footer() {
             Connect with Our Sales Team
           </h6>
 
-          <Button as={Link} className={styles.footer__cta} href="/sales-team">
+          <Button
+            as={Link}
+            className={`${styles.footer__cta} bg-white h-[40px] px-6 text-base font-medium`}
+            href="/sales-team"
+          >
             Talk to Sales
           </Button>
         </aside>
