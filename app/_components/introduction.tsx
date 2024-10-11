@@ -17,13 +17,11 @@ export default function Introduction() {
       <MotionSection directions="up">
         <div className={styles.introduction__content}>
           <h1 className={styles.text_super}>
-            <span className={styles.text_gradient_primary}>Simplify</span> Your
-            Invoicing <br /> with Zanbio
+            <span className={styles.text_gradient_primary}>Improve</span> your Cashflow with <br />
+            Zanbio
           </h1>
-          <h4 className={`lg:max-w-[620px] mt-4 ${styles.text_subtitle}`}>
-            Zanbio streamlines your financial management by generating Accounts
-            Receivable, Accounts Payable, and invoices effortlessly. Manage your
-            business finances efficiently—all in one place.
+          <h4 className={`lg:max-w-[720px] mt-4 ${styles.text_subtitle}`}>
+            Everything you need to get your customers to <strong>Pay You Faster</strong> and <strong>Optimise Payments</strong> to your vendors, in one place
           </h4>
 
           <Button

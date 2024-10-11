@@ -6,6 +6,7 @@ import Tagline from "./_components/tagline";
 
 import { InView } from "react-intersection-observer";
 import useMenuStore from "@/store/use-menu-store";
+import { metaBenefitsOfAP, metaBenefitsOfAR } from "@/constant/benefits";
 
 export default function Home() {
   const setActiveMenu = useMenuStore(state => state.setActiveMenu)
@@ -24,8 +25,9 @@ export default function Home() {
         <Features />
       </InView>
       <InView threshold={0.4} id="benefits" as="div" onChange={(inView) => getActiveSection(inView, "benefits")}>
-        <Benefits />
+        <Benefits metaBenefits={metaBenefitsOfAR}/>
       </InView>
+        <Benefits metaBenefits={metaBenefitsOfAP}/>
       <Tagline />
     </main>
   );

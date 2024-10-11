@@ -10,12 +10,12 @@ enum Directions {
 	None = "none"
 }
 
-interface IMotionSection { children: React.ReactNode, directions?: Directions }
+interface IMotionSection { children: React.ReactNode, directions?: Directions, threshold?: number }
 
-export default function MotionSection({ children, directions = Directions.None }: IMotionSection) {
-	const { ref, inView, entry } = useInView({
+export default function MotionSection({ children, directions = Directions.None, threshold = 0.3 }: IMotionSection) {
+	const { ref, inView } = useInView({
 		triggerOnce: true, // trigger animation only once
-		threshold: 0.3,    // start animating when 20% of the section is visible
+		threshold,    // start animating when 20% of the section is visible
 	});
 
 	const variants = {

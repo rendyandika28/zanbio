@@ -54,7 +54,7 @@ export default function SalesTeam() {
         <Image
           priority
           alt="sales-team"
-          className="size-full rounded-xl flex-1"
+          className="size-full rounded-xl col-span-4 object-contain"
           height={1200}
           src={SalesTeamImg}
           width={1200}

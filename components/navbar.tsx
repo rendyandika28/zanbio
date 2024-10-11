@@ -2,13 +2,16 @@
 
 import { Button } from "@nextui-org/button";
 import {
+  Listbox,
+  ListboxItem
+} from "@nextui-org/listbox";
+import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
   NavbarMenu,
-  NavbarMenuItem,
   NavbarMenuToggle,
-  Navbar as NextUINavbar,
+  Navbar as NextUINavbar
 } from "@nextui-org/navbar";
 import { Tab, Tabs } from "@nextui-org/tabs";
 import { default as Link, default as NextLink } from "next/link";
@@ -18,6 +21,7 @@ import { Logo } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import useMenuStore from "@/store/use-menu-store";
 import styles from "@/styles/style.module.scss";
+import { useState } from "react";
 
 
 export const Navbar = () => {
@@ -25,12 +29,15 @@ export const Navbar = () => {
   const activeMenu = useMenuStore(state => state.activeMenu)
   const setActiveMenu = useMenuStore(state => state.setActiveMenu)
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const onChangeMenu = (key: React.Key) => {
     const y = document.getElementById(key)?.getBoundingClientRect().top + window.scrollY;
     window.scroll({
       top: y - 80,
       behavior: 'smooth'
     });
+    setIsMenuOpen(false)
     setActiveMenu(key as string)
   }
 
@@ -49,7 +56,7 @@ export const Navbar = () => {
   }
 
   return (
-    <NextUINavbar className="border-b py-2" maxWidth="xl" position="sticky">
+    <NextUINavbar className="border-b py-2" maxWidth="xl" position="sticky" isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent justify="start">
         <NavbarBrand>
           <NextLink href="/">
@@ -89,21 +96,22 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="lg:hidden pl-4" justify="end">
-        <NavbarMenuToggle />
+      <NavbarContent className="lg:hidden pl-4" justify="end" >
+        <NavbarMenuToggle/>
       </NavbarContent>
 
       <NavbarMenu>
-        <div className="mt-2 flex flex-col justify-between h-dvh py-5 gap-4">
-          <div>
-            {siteConfig.navItems.map((item, index) => (
-              <NavbarMenuItem key={`${item}-${index}`}>
-                <Link color="foreground" href="#">
-                  {item.label}
-                </Link>
-              </NavbarMenuItem>
+        <div className="flex flex-col justify-between h-dvh py-5 gap-4">
+          <Listbox variant="faded" aria-label="Listbox menu with icons">
+            {siteConfig.navItems.map((item) => (
+              <ListboxItem
+                key={item.href}
+                onClick={() => onChangeMenu(item.href)}
+              >
+                {item.label}
+              </ListboxItem>
             ))}
-          </div>
+          </Listbox>
           <Button
             as={Link}
             className={`${styles.button_primary} h-[46px]`}
