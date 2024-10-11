@@ -1,5 +1,4 @@
 // variable
-$brand-color: #0052cc;
 $text-black-color: #1c2433;
 $text-gray-color: #666d80;
 $text-secondary-color: #f8fafb;
@@ -9,8 +8,7 @@ $text-darkgray-color: #36394A;
 
 .button {
   &_primary {
-    @apply text-white text_button;
-    background: $brand-color;
+    @apply text-white text_button bg-brand;
   }
 }
 
@@ -64,10 +62,6 @@ $text-darkgray-color: #36394A;
     @apply flex-center-col-content;
     @apply relative text-center;
     @apply max-w-7xl mx-auto z-[1] py-20 px-6 lg:px-4;
-  }
-
-  &__cta {
-    @apply button_primary h-[52px] w-[140px] mt-10 mb-[60px];
   }
 
   &__infos {
@@ -194,7 +188,7 @@ $text-darkgray-color: #36394A;
     @apply text-center mb-[60px];
 
     &_title {
-      color: $brand-color;
+      @apply text-brand;
     }
   }
 

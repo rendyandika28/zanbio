@@ -91,9 +91,8 @@ export const Navbar = () => {
         <NavbarItem className="hidden lg:flex">
           <Button
             as={Link}
-            className={`${styles.button_primary} h-[46px]`}
+            className="bg-brand text-white h-[46px] text-sm px-[30px]"
             href="/sales-team"
-            style={{ fontSize: "14px" }}
             variant="flat"
           >
             Talk to Sales

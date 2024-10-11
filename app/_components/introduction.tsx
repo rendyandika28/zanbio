@@ -54,7 +54,7 @@ export default function Introduction() {
 
           <Button
             as={Link}
-            className={styles.introduction__cta}
+            className="bg-brand text-white h-[52px] text-sm px-[25px] mt-10 mb-[60px]"
             href="/sales-team"
           >
             Talk to Sales
