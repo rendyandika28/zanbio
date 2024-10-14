@@ -20,11 +20,6 @@ export default function Footer() {
             src={"logo-monochrome.svg"}
             width={100}
           />
-
-          <h5 className={styles.footer__tagline}>
-            Zanbio streamlines your financial management by generating Accounts
-            Receivable, Accounts Payable, and invoices effortlessly
-          </h5>
         </aside>
         <aside className={styles.footer__content_right}>
           <h5 className={styles.text_heading_1}>Contact Us</h5>
