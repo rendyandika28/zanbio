@@ -14,7 +14,7 @@ export default function Introduction() {
   const cardInfos: CardInfo[] = [
     {
       title: "52%",
-      short_description: "Faster Payment Collection timing",
+      short_description: "Faster Payment Collection Timing",
     },
     {
       title: "30%",
@@ -43,7 +43,7 @@ export default function Introduction() {
         <div className={styles.introduction__content}>
           <h1 className={styles.text_super}>
             <span className={styles.text_gradient_primary}>Improve</span> your
-            Cashflow with <br />
+            Cash Flow with <br />
             Zanbio
           </h1>
           <h4 className={`lg:max-w-[720px] mt-4 ${styles.text_subtitle}`}>

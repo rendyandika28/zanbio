@@ -19,7 +19,7 @@ export default function Features() {
   const cardInfos: CardInfo[] = [
     {
       title: "Easy Implementation",
-      short_description: "you can get up and running in just weeks.",
+      short_description: "You can get up and running in just weeks.",
       icon: EasyImplementationIcon,
     },
     {
@@ -29,7 +29,7 @@ export default function Features() {
     },
     {
       title: "Making work fun",
-      short_description: "Eliminate Chronic spreadsheet pain ",
+      short_description: "Eliminate chronic spreadsheet pain ",
       icon: MakingWorkFunIcon,
     },
   ];
@@ -63,7 +63,7 @@ export default function Features() {
           <h2 className={styles.text_heading_1}>Features</h2>
           <h3 className={`${styles.text_super} ${styles.features__title}`}>
             <span className={styles.text_gradient_primary}>Helping</span> to
-            raise your Finance team’s <br /> quality of life
+            raise your finance team’s <br /> quality of life
           </h3>
           <h4
             className={`${styles.text_subtitle} ${styles.features__subtitle}`}
@@ -87,7 +87,7 @@ export default function Features() {
               <h4
                 className={`${styles.text_heading_1}  ${styles.features__content_head}`}
               >
-                Product
+                Products
               </h4>
               <h5
                 className={`${styles.text_super} ${styles.features__content_title}`}
@@ -134,7 +134,7 @@ export default function Features() {
               <h4
                 className={`${styles.text_heading_1}  ${styles.features__content_head}`}
               >
-                High Level Product
+                Products
               </h4>
               <h5
                 className={`${styles.text_super} ${styles.features__content_title}`}

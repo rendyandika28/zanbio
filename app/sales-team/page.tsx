@@ -2,14 +2,14 @@
 
 import { Button } from "@nextui-org/button";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { SubmitHandler } from "react-hook-form";
-import Link from "next/link";
 
 import FormSales from "../_components/form/sales";
 
 import AcceptIcon from "@/assets/icons/accepted.svg";
-import SalesTeamImg from "@/assets/images/sales-team.png";
+import { Logo } from "@/components/icons";
 import { useToast } from "@/hooks/use-toast";
 import styles from "@/styles/style.module.scss";
 import { IFormInput } from "@/types/form";
@@ -51,14 +51,10 @@ export default function SalesTeam() {
         </h2>
       </div>
       <div className={styles.sales__content}>
-        <Image
-          priority
-          alt="sales-team"
-          className="size-full rounded-xl col-span-4 object-contain"
-          height={1200}
-          src={SalesTeamImg}
-          width={1200}
-        />
+        <div className={styles.sales__content_image}>
+          <Logo customClass="lg:w-full" width={440} height={138}/>
+          <h5 className="mt-10 text-center">Helping Businesses to Improve Cash Flow</h5>
+        </div>
         <div className={styles.sales__content_form}>
           {!isSuccessSubmitForm ? (
             <FormSales onSubmit={onSubmit} />

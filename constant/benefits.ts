@@ -12,28 +12,28 @@ import BenefitARReduceDSO from "@/assets/illustrations/benefits-ar-reduce-dso.sv
 
 const benefitsOfAR: Benefit[] = [
   {
-    title: "Reduce DSO cycle",
+    title: "Reduce DSO Cycle",
     short_description:
       "Accelerate customer payment cycles by tracking invoice delivery status and fully automating follow-up actions until each invoice is paid without any human involvement",
     illustration: BenefitARReduceDSO,
     illustrationClassName: "size-full",
   },
   {
-    title: "Eliminate Invoice to payment reconciliation",
+    title: "Eliminate Invoice to Payment Reconciliation",
     short_description:
       "Enable finance and accounting teams to focus on more strategic activities by reducing manual inefficiencies by automating reconciliation processes",
     illustration: BenefitAREliminateInvoice,
     illustrationClassName: "size-full",
   },
   {
-    title: "Enhance Customer payment forecasting",
+    title: "Enhance Customer Payment Forecasting",
     short_description:
       "AI powered machine learning predictions provide you with customer payment pattern insights plus a projected window when the customer is most likely to pay, not based on conventional aging of invoices due based on invoice due dates",
     illustration: BenefitAREnhanceCustomer,
     illustrationClassName: "size-full",
   },
   {
-    title: "Improve Revenue leakage",
+    title: "Improve Revenue Leakage",
     short_description:
       "Resolve Disputes & Collect debt faster. Prevent revenue leakages and maintain customer satisfaction by accelerating dispute resolution with smart workflow tools",
     illustration: BenefitARImproveRevenue,
@@ -50,7 +50,7 @@ const benefitsOfAR: Benefit[] = [
 
 const benefitsOfAP: Benefit[] = [
   {
-    title: "Touch free Vendor Invoice data capture",
+    title: "Touch Free Vendor Invoice Data Capture",
     short_description:
       "Eliminate the need to manually capture each vendor invoice. Our AI vision learning tool reads any invoice format be it a scanned invoice or pdf and will automatically transfer the relevant invoice data into the platform.",
     illustration: BenefitAPFreeVendor,
@@ -64,21 +64,21 @@ const benefitsOfAP: Benefit[] = [
     illustrationClassName: "size-full",
   },
   {
-    title: "Improve Payment risk management",
+    title: "Improve Payment Risk Management",
     short_description:
       "In today’s digital world, protect your business falling victim to fraudulent schemes such as fake invoice submissions and overbilling by vendors. Let the system monitor and alert any abnormalities to you to help protect your business",
     illustration: BenefitAPImprovePayment,
     illustrationClassName: "w-full h-fit",
   },
   {
-    title: "Enhance automated PO to invoice matching",
+    title: "Enhance Automated PO to Invoice Matching",
     short_description:
       "Eliminate the need to go through each vendor invoice manually and spend long periods of time performing invoice matching. Our automated matching system reads and matches invoices against PO’s.",
     illustration: BenefitAPEnhanceAutomated,
     illustrationClassName: "size-full",
   },
   {
-    title: "Improve cash outflow forecasting",
+    title: "Improve Cash Outflow Forecasting",
     short_description:
       "Comprehensive dashboards provide an unobscured view of your payment cycle, offering real-time data access and analytics",
     illustration: BenefitAPImproveCash,
