@@ -277,10 +277,10 @@ $text-darkgray-color: #36394A;
   &__content {
     @apply grid grid-cols-1 md:grid-cols-8 gap-4 lg:gap-8 xl:gap-[80px];
     &_image {
-      @apply col-span-4 flex justify-start flex-col mt-14; 
+      @apply col-span-4 flex justify-center xl:justify-start flex-col xl:mt-14; 
 
       h5 {
-        @apply text-5xl font-medium leading-[60px];
+        @apply text-xl xl:text-5xl font-medium xl:leading-[60px];
       }
     }
     &_form {

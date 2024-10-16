@@ -11,7 +11,8 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-  output: 'standalone',
+  output: 'export',
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;

@@ -52,8 +52,8 @@ export default function SalesTeam() {
       </div>
       <div className={styles.sales__content}>
         <div className={styles.sales__content_image}>
-          <Logo customClass="lg:w-full" width={440} height={138}/>
-          <h5 className="mt-10 text-center">Helping Businesses to Improve Cash Flow</h5>
+          <Logo customClass="xl:w-[440px] xl:h-[138px] mx-auto"/>
+          <h5 className="my-5 xl:my-0 xl:mt-10 text-center">Helping Businesses to Improve Cash Flow</h5>
         </div>
         <div className={styles.sales__content_form}>
           {!isSuccessSubmitForm ? (
