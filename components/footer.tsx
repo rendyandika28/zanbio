@@ -17,7 +17,7 @@ export default function Footer() {
             alt="logo"
             className="w-28 mb-4"
             height={100}
-            src={"logo-monochrome.svg"}
+            src={"/logo-monochrome.svg"}
             width={100}
           />
         </aside>
