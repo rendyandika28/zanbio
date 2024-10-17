@@ -1,13 +1,16 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import sgMail from "@sendgrid/mail";
 
 import { IFormInput } from "@/types/form";
 import ValidationFormSchema from "@/formschema/sales-connect-formschema";
+sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 export async function POST(request: Request) {
-  const username = process.env.NEXT_PUBLIC_BURNER_USERNAME;
-  const password = process.env.NEXT_PUBLIC_BURNER_PASSWORD;
-  const myEmail = process.env.NEXT_PUBLIC_PERSONAL_EMAIL;
+  const fromName = process.env.NEXT_PUBLIC_SENDGRID_FROM_NAME as string
+  const fromEmail = process.env.NEXT_PUBLIC_SENDGRID_FROM_EMAIL as string
+
+  // this email should be the same with 'from email' because this email will send to our personal email
+  const replyTo = process.env.NEXT_PUBLIC_SENDGRID_REPLY_TO_EMAIL as string
 
   try {
     const data: IFormInput = await request.json();
@@ -17,20 +20,12 @@ export async function POST(request: Request) {
       abortEarly: false,
     });
 
-    // create transporter object
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: username,
-        pass: password,
+    const msg: sgMail.MailDataRequired = {
+      to: replyTo,
+      from: {
+        email: fromEmail,
+        name: fromName
       },
-    });
-
-    await transporter.sendMail({
-      from: username,
-      to: myEmail,
       replyTo: data.work_email,
       subject: `Zanbio: website activity from ${data.work_email}`,
       html: `
@@ -97,7 +92,9 @@ export async function POST(request: Request) {
         </body>
         </html>
       `,
-    });
+    };
+
+    await sgMail.send(msg);
 
     return NextResponse.json(
       {
@@ -108,7 +105,7 @@ export async function POST(request: Request) {
       {
         status: 200,
         statusText: "OK",
-      },
+      }
     );
   } catch (error: any) {
     if (error.name && error.name === "ValidationError") {
@@ -119,7 +116,7 @@ export async function POST(request: Request) {
           statusMessage: "unprocessable entity",
           statusCode: 422,
         },
-        { status: 422, statusText: "Error" },
+        { status: 422, statusText: "Error" }
       );
     }
 
@@ -130,7 +127,7 @@ export async function POST(request: Request) {
         data: null,
         error,
       },
-      { status: 500, statusText: "Error" },
+      { status: 500, statusText: "Error" }
     );
   }
 }
