@@ -62,14 +62,14 @@ export default function Features() {
         <div className={styles.features__head}>
           <h2 className={styles.text_heading_1}>Features</h2>
           <h3 className={`${styles.text_super} ${styles.features__title}`}>
-            <span className={styles.text_gradient_primary}>Helping</span> to
-            raise your finance team’s <br /> quality of life
+            <span className={styles.text_gradient_primary}>Raise </span>
+            your finance team’s quality of <br /> life
           </h3>
           <h4
             className={`${styles.text_subtitle} ${styles.features__subtitle}`}
           >
-            Zanbio helps finance teams to increase Operational efficiency by
-            simplifying workflows and automating repetitive tasks. <br /> <br />
+            Zanbio helps finance teams to increase operational efficiency by
+            simplifying workflows and automating repetitive tasks <br /> <br />
             Employees can focus on key tasks, raises total productivity and
             improve customer relationships
           </h4>
@@ -99,19 +99,19 @@ export default function Features() {
               >
                 Accounts receivable automation is more than sending invoices by
                 email, adding digital payment options and hoping your customers
-                pay on time.
+                pay on time
                 <br />
                 <br />
                 An automated solution should reduce Invoice to Cash Time (DSO),
                 reduce manpower cost in chasing customer payments while
-                improving working capital and customer experience.
+                improving working capital and customer experience
                 <br />
                 <br />
                 Zanbio helps you release cash from customers using
                 next-generation smart workflow tools powered by customer
                 behavioural data analytics and machine learning. Achieve
                 operational efficiencies and optimize working capital by driving
-                world-class invoice-to-cash processes.
+                world-class invoice-to-cash processes
               </h6>
             </div>
             <div className={styles.features__content_img}>
@@ -147,7 +147,7 @@ export default function Features() {
                 Driving sales and generating revenue gets most of the attention
                 within an organisation, but managing expenses and vendor
                 relationships effectively is equally significant in a business
-                to ensure profitability and sustainability.
+                to ensure profitability and sustainability
                 <br />
                 <br />
                 Zanbio’s automated workflows streamlines your accounts payable

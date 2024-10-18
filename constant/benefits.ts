@@ -40,7 +40,7 @@ const benefitsOfAR: Benefit[] = [
     illustrationClassName: "size-full",
   },
   {
-    title: "Don’t just focus on collections, create great customer experience",
+    title: "Don’t Just Focus on Collections, Create a Great Customer Experience",
     short_description:
       "Give your customers payable team a tool to easily manage the entire invoice to payment experience which make their life easier with an interactive self-serving customer portal - so you get paid faster",
     illustration: BenefitARGreatCustomer,
@@ -52,7 +52,7 @@ const benefitsOfAP: Benefit[] = [
   {
     title: "Touch Free Vendor Invoice Data Capture",
     short_description:
-      "Eliminate the need to manually capture each vendor invoice. Our AI vision learning tool reads any invoice format be it a scanned invoice or pdf and will automatically transfer the relevant invoice data into the platform.",
+      "Eliminate the need to manually capture each vendor invoice. Our AI vision learning tool reads any invoice format be it a scanned invoice or pdf and will automatically transfer the relevant invoice data into the platform",
     illustration: BenefitAPFreeVendor,
     illustrationClassName: "size-full",
   },
@@ -73,7 +73,7 @@ const benefitsOfAP: Benefit[] = [
   {
     title: "Enhance Automated PO to Invoice Matching",
     short_description:
-      "Eliminate the need to go through each vendor invoice manually and spend long periods of time performing invoice matching. Our automated matching system reads and matches invoices against PO’s.",
+      "Eliminate the need to go through each vendor invoice manually and spend long periods of time performing invoice matching. Our automated matching system reads and matches invoices against PO’s",
     illustration: BenefitAPEnhanceAutomated,
     illustrationClassName: "size-full",
   },
