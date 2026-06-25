@@ -1,6 +1,6 @@
 # Zanbio — Marketing Site
 
-![Project Preview]([https://i.ibb.co/FD2rC9s/Screenshot-2023-08-27-at-11-09-54.png](https://rdydika.dev/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdpaqb7s4w%2Fimage%2Fupload%2Fv1782209892%2Frdydika%2Fportfolio%2FZanbio.png&w=1536&q=75))
+![Project Preview](https://rdydika.dev/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdpaqb7s4w%2Fimage%2Fupload%2Fv1782209892%2Frdydika%2Fportfolio%2FZanbio.png&w=1536&q=75)
 
 This is the **marketing website** for [Zanbio](https://zanbio.foya.dev), a B2B SaaS platform that automates Accounts Receivable (AR) and Accounts Payable (AP) for finance teams.
 
