@@ -1,53 +1,70 @@
-# Next.js & NextUI Template
+# Zanbio — Marketing Site
 
-This is a template for creating applications using Next.js 14 (app directory) and NextUI (v2).
+This is the **marketing website** for [Zanbio](https://zanbio.foya.dev), a B2B SaaS platform that automates Accounts Receivable (AR) and Accounts Payable (AP) for finance teams.
 
-[Try it on CodeSandbox](https://githubbox.com/nextui-org/next-app-template)
+The site is a lead generation tool — visitors browse product features and benefits, then fill a contact form to reach the sales team. There is no authentication, database, or backend. Leads are sent directly to email via SendGrid.
 
-## Technologies Used
+## Routes
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+| Path | Purpose |
+|------|---------|
+| `/` | Landing page: hero → features → benefits (AR & AP) → closing CTA |
+| `/sales-team` | Lead capture form: name, email, phone, company, job title, current system |
+| `/api/contact-sales` | `POST` — validates input with Yup, sends inquiry through SendGrid |
 
-## How to Use
+## Tech Stack
 
-### Use the template with create-next-app
+| Area | Tools |
+|------|-------|
+| Framework | Next.js 14 (App Router), TypeScript |
+| Styling | Tailwind CSS, SCSS Modules, Tailwind Variants |
+| UI | NextUI v2, Radix UI (Toast) |
+| Animation | Framer Motion |
+| State | Zustand (nav scroll tracking only) |
+| Form | react-hook-form + Yup |
+| Email | SendGrid |
 
-To create a new project based on this template using `create-next-app`, run the following command:
+## Project Structure
 
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
+```
+app/                  # App Router pages, API route, layout
+├── page.tsx          # Homepage (client component)
+├── layout.tsx        # Root layout with Navbar, Footer, Toaster
+├── providers.tsx     # NextUI + Theme providers
+├── error.tsx         # Error boundary
+├── api/contact-sales/# POST endpoint → SendGrid
+├── sales-team/       # Contact form page
+└── _components/      # Homepage sections (introduction, features, benefits, tagline)
+
+components/           # Shared UI
+├── navbar.tsx        # Sticky nav with scroll-aware tab via IntersectionObserver
+├── footer.tsx
+├── motion/section.tsx # Framer Motion scroll-triggered wrapper
+└── ui/toast.tsx      # Radix-based toast
+
+config/               # Site metadata, nav items, font config
+constant/benefits.ts  # AR & AP benefit data (typed arrays)
+store/                # Zustand — active menu state
 ```
 
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+## Getting Started
 
 ```bash
-npm install
+yarn install
+cp .env.example .env.local   # fill in SendGrid credentials
+yarn dev                     # http://localhost:3000
+yarn build                   # production build (standalone output)
 ```
 
-### Run the development server
+## Environment
 
-```bash
-npm run dev
-```
-
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
-
-```bash
-public-hoist-pattern[]=*@nextui-org/*
-```
-
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+| Variable | Purpose |
+|----------|---------|
+| `SENDGRID_API_KEY` | SendGrid API key |
+| `NEXT_PUBLIC_SENDGRID_FROM_NAME` | Sender display name |
+| `NEXT_PUBLIC_SENDGRID_FROM_EMAIL` | Sender email |
+| `NEXT_PUBLIC_SENDGRID_REPLY_TO_EMAIL` | Where inquiries are delivered |
 
 ## License
 
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+MIT
